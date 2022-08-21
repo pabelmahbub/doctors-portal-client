@@ -1,2 +1,2 @@
-## live site :https://doctor-app-1.netlify.app/home
+## live site :https://doctor-app-1.netlify.app/
 
