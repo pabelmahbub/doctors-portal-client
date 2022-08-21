@@ -8,22 +8,22 @@ import Review from './Review';
 function Testimonials() {
                               const reviews=[{
                                                             _id:1,
-                                                            name:'pabel',
-                                                            location:'Noakhali',
+                                                            name:'Mr.Takahashi',
+                                                            location:'Tokyo, Japan',
                                                             review:'Consectetur deserunt consectetur minim ex qui sint duis commodo pariatur tempor aliqua id ut eiusmod. Non consectetur non laborum id irure laboris. Dolor culpa nulla mollit est consectetur dolore ad commodo est voluptate fugiat laborum deserunt eu. Dolore commodo sint sit fugiat commodo et eiusmod enim do aliquip enim.',
                                                             img:people1
                               },
                               {
                                                             _id:2,
-                                                            name:'pabel',
-                                                            location:'Noakhali',
+                                                            name:'Ms. Nakamura',
+                                                            location:'Gunma, Japan',
                                                             review:'Cillum duis deserunt ad nostrud fugiat sit consectetur eu. Non sint pariatur elit magna officia sint exercitation qui cillum est amet eu nulla. Sunt nulla do qui est. Lorem minim ipsum officia qui exercitation dolore fugiat dolore sit ipsum esse non. Magna esse sit est non commodo. Do sunt mollit amet nulla laboris voluptate sunt ea. Pariatur elit sint nostrud id veniam laboris.',
                                                             img:people2
                               },
                               {
                                                             _id:3,
-                                                            name:'pabel',
-                                                            location:'Noakhali',
+                                                            name:'Ms.Kitajima',
+                                                            location:'Niigata, Japan',
                                                             review:'Id nostrud elit ea tempor ipsum nostrud officia sint reprehenderit labore ad eu adipisicing Lorem. Deserunt proident esse culpa eu ad magna quis velit quis commodo minim enim anim ea. Velit dolore aliqua nostrud id. Aliquip ipsum non fugiat mollit proident consectetur ad irure reprehenderit consectetur. Anim dolor non ipsum enim consequat incididunt tempor. Nisi mollit nulla magna ullamco ad in.',
                                                             img:people3
                               },]
@@ -35,7 +35,7 @@ function Testimonials() {
                                    <h2 className='text-3xl'>What our patients say</h2>
                               </div>
                               <div className='grid grid-cols-1 md:grid-cols-2 lg:grid'>
-                                    <img src={quote} className='lg:w-48 w-24'></img>
+                                    <img src={quote} className='lg:w-36 w-24'></img>
                               </div>
                      </div>
                               <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>

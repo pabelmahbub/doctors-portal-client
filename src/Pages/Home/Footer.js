@@ -5,7 +5,7 @@ function Footer() {
                               let year = new Date().getFullYear();
   return (
                               <>
-                              <footer style={{background: `url(${footer})`,backgroundSize:"cover"}} class="footer p-10 text-center">
+                              <footer style={{background: `url(${footer})`,backgroundSize:"contain"}} class="footer p-10 ml-24 text-center">
                               <div>
                                 <span class="footer-title">Services</span> 
                                 <a class="link link-hover">Branding</a>
@@ -28,13 +28,13 @@ function Footer() {
                               </div>
                             </footer>
 
-<footer class="footer footer-center p-4 text-base-content">
-<div>
-  <p>Copyright © {year} - All right reserved by ACME Industries Ltd</p>
-</div>
-</footer>
+                              <footer class="footer footer-center p-4 pb-24 text-base-content">
+                              <div>
+                              <p>Copyright © {year} - All right reserved by pabelmahbub.</p>
+                              </div>
+                              </footer>
+                              </>
 
-</>
   )
 }
 
