@@ -6,6 +6,7 @@ import OneService from './OneService';
 import Services from './Services';
 import Testimonials from './Testimonials';
 import Footer from './Footer';
+import ContactForm from './ContactForm';
 
 function Home() {
   return (
@@ -19,6 +20,7 @@ function Home() {
     </div>
      <HomeAppointment></HomeAppointment>
      <Testimonials></Testimonials>
+     <ContactForm></ContactForm>
      <Footer></Footer>
      </>
   )

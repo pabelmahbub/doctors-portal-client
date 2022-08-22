@@ -30,7 +30,7 @@ function Footer() {
 
                               <footer class="footer footer-center p-4 pb-24 text-base-content">
                               <div>
-                              <p>Copyright © {year} - All right reserved by pabelmahbub.</p>
+                              <p>Copyright © {year} - All right reserved by pabelmahbub</p>
                               </div>
                               </footer>
                               </>
