@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import Footer from '../Home/Footer';
+import Footer from '../Shared/Footer';
 import Primarybutton from '../Shared/Primarybutton';
 
 function NotFound() {

@@ -14,8 +14,8 @@ function ContactForm() {
     emailjs.sendForm('service_32jpqla', 'template_vbv53cy', form.current, 'v8XFNnTGp8JZaNL_F')
       .then((result) => {
           console.log(result.text);
-          alert('eamil is sent');
-          e.target.value='';
+          alert('Message sending successfully!');
+          form ='';
       
       }, (error) => {
           console.log(error.text);

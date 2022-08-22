@@ -5,13 +5,13 @@ import Info from './Info';
 import OneService from './OneService';
 import Services from './Services';
 import Testimonials from './Testimonials';
-import Footer from './Footer';
+import Footer from '../Shared/Footer';
 import ContactForm from './ContactForm';
 
 function Home() {
   return (
     <>
-    <div className='px-12'>
+    <div>
       <Banner></Banner>
       <Info></Info>
       <Services></Services>
