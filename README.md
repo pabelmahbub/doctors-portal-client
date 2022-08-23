@@ -102,13 +102,13 @@ $ npm run build[for building app]
 ```
 
 ### References
-https://docs.... how to make a react app
-https://docs... how to express app
+[https://docs....](https://reactjs.org/docs/create-a-new-react-app.html): how to make a react app
+[https://docs...](https://www.freecodecamp.org/news/create-a-react-frontend-a-node-express-backend-and-connect-them-together-c5798926047c/) : how to integrate express app
 
 ### Version History
 - 0.01 - Initial Release
 - 0.02 - Coming soon
-
+```
 
 
 
