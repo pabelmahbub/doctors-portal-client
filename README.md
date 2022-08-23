@@ -1,12 +1,12 @@
-## live site :https://doctor-app-3.netlify.app/
-# Doctors Portal
+#### live site :https://doctor-app-3.netlify.app/
+## Doctors Portal
 Dental clinic app where patient and doctors both's life would be easier because this app helps to book schedule and provide available time of consulting.
 
-### Language
+#### Language
 - ReactJavascript)
 
 
-### Dependencies
+#### Dependencies
 - **node** - version 16.14.2
 - **npm** - npm version 8.5.0
 
@@ -17,7 +17,7 @@ Below are some of the packages used in the project.
  
 …
 
-### Installing
+#### Installing
 **Clone the repository**
 ```
 $ git clone https://github.com/pabelmahbub/doctors-portal-client.git
@@ -30,7 +30,7 @@ For creating development,staging,production build, check-out branch "main"
 ```
 $ npm install
 ```
-### Execute Program
+#### Execute Program
 
 **Configuration**
 Update the app.json file according to the new configuration.
@@ -92,7 +92,7 @@ $ npm start
 ```
 Choose the appropriate running option.
 
-### Build Setup
+#### Build Setup
 #### In web:
 ```
 $ npm run build[for building app]
