@@ -18,9 +18,9 @@ function AppointmentBanner({date,setDate}) {
 
 
 
-    <div class="card bg-base-130 shadow-xl align-center">
+    <div class="card bg-base-130 shadow-xl align-center px-10">
       <DayPicker 
-                                styles={{caption: { color:'orange',fontSize:'20px' }}}
+                                styles={{caption: { color:'bg-accent',fontSize:'20px' }}}
                                 mode="single"
                                 selected={date}
                                 onSelect={setDate}/>
