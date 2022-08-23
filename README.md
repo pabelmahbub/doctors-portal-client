@@ -20,13 +20,11 @@ Below are some of the packages used in the project.
 ### Installing
 **Clone the repository**
 ```
-$ git clone -b <branchname> https://github.com/pabelmahbub
-$ cd tech-japan-client
+$ git clone https://github.com/pabelmahbub/doctors-portal-client.git
+$ cd doctors-portal-client
 ```
 *branchname* can be any which we have to make the build.
-For creating development build, check-out branch "develop"
-For creating staging build, check-out branch "staging"
-For creating production build, check-out branch "main"
+For creating development,staging,production build, check-out branch "main"
 
 **Install dependencies**
 ```
@@ -57,7 +55,36 @@ Update the app.json file according to the new configuration.
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
-    }
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.1.8"
+  }
+}
+
  ```
  **Run the Project**
 ```
@@ -66,7 +93,7 @@ $ npm start
 Choose the appropriate running option.
 
 ### Build Setup
-#### web
+#### In web:
 ```
 $ npm run build[for building app]
 ```
@@ -79,7 +106,8 @@ https://docs.... how to make a react app
 https://docs... how to express app
 
 ### Version History
-- 0.1 - Initial Release
+- 0.01 - Initial Release
+- 0.02 - Coming soon
 
 
 
