@@ -15,8 +15,7 @@ function ContactForm() {
       .then((result) => {
           console.log(result.text);
           alert('Message sending successfully!');
-          form ='';
-      
+          form="";
       }, (error) => {
           console.log(error.text);
       });
@@ -35,13 +34,13 @@ function ContactForm() {
 
                                  <form ref={form} onSubmit={sendEmail}>
                                  <div>
-                                   <input style={{marginTop:'8px',width:'450px',height:'50px',borderRadius:'8px',paddingLeft:'10px'}}type="text" id="name" required placeholder='Email address' name="user_name"/>
+                                   <input style={{marginTop:'8px',width:'70%',height:'50px',borderRadius:'8px',paddingLeft:'10px'}}type="text" id="name" required placeholder='Email address' name="user_name"/>
                                  </div>
                                  <div>
-                                   <input style={{marginTop:'10px',width:'450px',height:'50px',borderRadius:'8px',paddingLeft:'10px'}} type="email" id="email" required placeholder='Subject' name="user_email"/>
+                                   <input style={{marginTop:'10px',width:'70%',height:'50px',borderRadius:'8px',paddingLeft:'10px'}} type="email" id="email" required placeholder='Subject' name="user_email"/>
                                  </div>
                                  <div>
-                                   <textarea style={{marginTop:'10px',marginBottom:'12px',width:'450px',height:'136px',borderRadius:'8px',paddingLeft:'10px',paddingTop:'5px'}} id="message" required placeholder='Your message' name="message"/>
+                                   <textarea style={{marginTop:'10px',marginBottom:'12px',width:'70%',height:'90px',borderRadius:'8px',paddingLeft:'10px',paddingTop:'5px'}} id="message" required placeholder='Your message' name="message"/>
                                  </div>
                              
                              <Primarybutton type="submit" value="Send">Send</Primarybutton>
