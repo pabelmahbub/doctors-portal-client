@@ -1,6 +1,6 @@
 ## live site :https://doctor-app-2.netlify.app/
-# App Name
-loremmmm50
+# Doctors Portal
+Dental clinic app where patient and doctors both's life would be easier because this app helps to book schedule and provide available time of consulting.
 
 ### Language
 - ReactJavascript)
@@ -13,7 +13,7 @@ loremmmm50
 #### Required Packages
 Below are some of the packages used in the project.
  * github.com/adrianferre/focus-formik-error
- * ....
+ * react-day-picker date-fns
  
 …
 
