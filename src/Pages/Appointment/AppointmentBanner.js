@@ -7,7 +7,6 @@ import Primarybutton from '../Shared/Primarybutton';
 import Appointment from './Appointment';
 
 function AppointmentBanner({date,setDate}) {
-
   return (
 <div style={{background: `url(${bg})`}}>
 <div class="hero min-h-screen">
@@ -23,7 +22,9 @@ function AppointmentBanner({date,setDate}) {
                                 styles={{caption: { color:'bg-accent',fontSize:'20px' }}}
                                 mode="single"
                                 selected={date}
-                                onSelect={setDate}/>
+                                onSelect={setDate}
+                                disabled= {{ before: new Date() }}
+                              />
     </div>
 
 
