@@ -20,7 +20,7 @@ function App() {
         <Route path="/appointment" element={<Appointment />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
-    
+
 
     </div>
   );
