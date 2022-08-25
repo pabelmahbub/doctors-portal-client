@@ -3,20 +3,28 @@
 ## Doctors Portal
 Dental clinic app where patient and doctors both's life would be easier because this app helps to book schedule and provide available time of consulting.
 
-#### Language
+### Language
 - ReactJavascript)
+
+#### Tech stack and packages:
+- React
+- react-day-picker
+- react-hook-form
+- react-router@v6
+- EmailJs
+- Tailwind
+- DaisyUI
+- Firebase
+- Heroku
+- Node.js
+- Express.js
+- MongoDB
 
 
 #### Dependencies
 - **node** - version 16.14.2
 - **npm** - npm version 8.5.0
 
-#### Required Packages
-Below are some of the packages used in the project.
- * github.com/adrianferre/focus-formik-error
- * react-day-picker date-fns
- 
-…
 
 #### Installing
 **Clone the repository**
@@ -98,7 +106,6 @@ Choose the appropriate running option.
 ```
 $ npm run build[for building app]
 ```
-
 **Command to make the build using new credentials**
 ```
 
