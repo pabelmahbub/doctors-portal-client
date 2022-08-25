@@ -5,9 +5,9 @@ import marker from '../../assets/icons/marker.svg';
 import phone from '../../assets/icons/phone.svg';
 
 function Info() {
-                              const title1='1img elements must have an alt prop, either with meaningful text, or an';
-                              const title2='2img elements must have an alt prop, either with meaningful text, or an'
-                              const title3='3img elements must have an alt prop, either with meaningful text, or an'
+                              const title1='サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト';
+                              const title2='サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト';
+                              const title3='サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト';
   return (
     <div className='grid grid-cols-1 lg:grid-cols-3 gap-4'>
                               <InfoCard img={clock} title={title1} bgClass= 'bg-gradient-to-r from-secondary to-primary'></InfoCard>

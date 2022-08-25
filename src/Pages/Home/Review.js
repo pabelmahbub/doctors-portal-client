@@ -4,7 +4,7 @@ function Review({review}) {
   return (
                               <div class="card lg:max-w-lgbg-base-100 shadow-xl">
                               <div class="card-body">
-                                <h2 class="card-title">Our Valuable Clients!</h2>
+                                <h2 class="card-title">貴重なクライアント!</h2>
                                 <p>{review.review}</p>
                                 <div class="flex items-center py-2">
                                 <div class="avatar">
