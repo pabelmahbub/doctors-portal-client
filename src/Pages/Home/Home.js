@@ -11,18 +11,18 @@ import ContactForm from './ContactForm';
 function Home() {
   return (
     <>
-    <div>
-      <Banner></Banner>
-      <Info></Info>
-      <Services></Services>
-      <OneService></OneService>
-     
-    </div>
-     <HomeAppointment></HomeAppointment>
-     <Testimonials></Testimonials>
-     <ContactForm></ContactForm>
-     <Footer></Footer>
-     </>
+      <div>
+        <Banner></Banner>
+        <Info></Info>
+        <Services></Services>
+        <OneService></OneService>
+
+      </div>
+      <HomeAppointment></HomeAppointment>
+      <Testimonials></Testimonials>
+      <ContactForm></ContactForm>
+      <Footer></Footer>
+    </>
   )
 }
 

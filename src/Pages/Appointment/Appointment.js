@@ -5,12 +5,12 @@ import AppointmentBanner from './AppointmentBanner'
 import AvailableAppointments from './AvailableAppointments'
 
 function Appointment() {
-       const [date, setDate] = useState(new Date());
+  const [date, setDate] = useState(new Date());
   return (
     <div>
-                              <AppointmentBanner date={date} setDate={setDate}></AppointmentBanner>
-                              <AvailableAppointments date={date} setDate={setDate}></AvailableAppointments>
-                              <Footer></Footer>
+      <AppointmentBanner date={date} setDate={setDate}></AppointmentBanner>
+      <AvailableAppointments date={date} setDate={setDate}></AvailableAppointments>
+      <Footer></Footer>
     </div>
   )
 }

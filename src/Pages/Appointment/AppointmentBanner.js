@@ -6,35 +6,35 @@ import bg from '../../assets/images/bg.png';
 import Primarybutton from '../Shared/Primarybutton';
 import Appointment from './Appointment';
 
-function AppointmentBanner({date,setDate}) {
+function AppointmentBanner({ date, setDate }) {
   return (
-<div style={{background: `url(${bg})`}}>
-<div class="hero min-h-screen">
-  <div class="hero-content flex-col lg:flex-row-reverse">
-    <img width="50%" height="40%" src={chair}  alt="Shoes" class="rounded-xl" />
-    <div className="mr-24">
+    <div style={{ background: `url(${bg})` }}>
+      <div class="hero min-h-screen">
+        <div class="hero-content flex-col lg:flex-row-reverse">
+          <img width="50%" height="40%" src={chair} alt="Shoes" class="rounded-xl" />
+          <div className="mr-24">
 
 
 
 
-    <div class="card bg-base-130 shadow-xl align-center px-10">
-      <DayPicker 
-                                styles={{caption: { color:'bg-accent',fontSize:'20px' }}}
-                                mode="single"
-                                selected={date}
-                                onSelect={setDate}
-                                disabled= {{ before: new Date() }}
-                              />
+            <div class="card bg-base-130 shadow-xl align-center px-10">
+              <DayPicker
+                styles={{ caption: { color: 'bg-accent', fontSize: '20px' } }}
+                mode="single"
+                selected={date}
+                onSelect={setDate}
+                disabled={{ before: new Date() }}
+              />
+            </div>
+
+
+
+
+
+          </div>
+        </div>
+      </div>
     </div>
-
-
-
-                             
-                     
-    </div>
-  </div>
-</div>
-</div>
   )
 }
 
