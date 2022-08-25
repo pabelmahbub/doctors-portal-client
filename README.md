@@ -31,8 +31,10 @@ Dental clinic app where patient and doctors both's life would be easier because 
 ```
 $ git clone https://github.com/pabelmahbub/doctors-portal-client.git
 $ cd doctors-portal-client
+$ npm install
+$ npm start
 ```
-*branchname* can be any which we have to make the build.
+*branchname* we used main to make the build[no other branch is still to be created].
 For creating development,staging,production build, check-out branch "main"
 
 **Install dependencies**
