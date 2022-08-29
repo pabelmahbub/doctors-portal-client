@@ -5,20 +5,20 @@ import Footer from '../Shared/Footer';
 import auth from '../../firebase.init';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import Loading from '../Shared/Loading';
 
-function Login() {
+function SignUp() {
   const [signInWihGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
   const { register, formState: { errors }, handleSubmit } = useForm();
   const onSubmit = (data) => console.log(data);
 
   const [
-    signInWithEmailAndPassword,
+    createUserWithEmailAndPassword,
     user,
     loading,
     error,
-  ] = useSignInWithEmailAndPassword(auth);
+  ] = useCreateUserWithEmailAndPassword(auth);
 
   let signInError;
 
@@ -38,16 +38,44 @@ function Login() {
   
   const OnSubmit = data =>{
     console.log(data);
-    signInWithEmailAndPassword(data.email,data.password);
+    createUserWithEmailAndPassword(data.name,data.email,data.password);
   }
   return (
 <>
     <div className='flex h-screen justify-center items-center'>
        <div class="card w-96 bg-base-100 shadow-xl">
         <div class="card-body">
-          <h2 class="text-center text-2xl font-bold">Login</h2>
+          <h2 class="text-center text-2xl font-bold">Sign Up</h2>
 
           <form onSubmit={handleSubmit(OnSubmit)}>
+
+
+          <div class="form-control w-full max-w-xs">
+              <label class="label">
+                <span class="label-text">Name</span>
+              </label>
+              <input 
+              type="text" 
+              placeholder="Pls type name here" 
+              class="input input-bordered w-full max-w-xs"
+              {...register("name", {
+                        required:{
+                          value: true,
+                          message:'Name is Required'
+                        },
+                        minLength: {
+                          value:2,
+                          message:'Name must be 2 or more characters'
+                        }
+                      })}
+              />
+              <label class="label">
+              {errors.name?.type === 'required' &&  <span class="label-text-alt text-red-500">{errors.name.message}</span>}
+              {errors.name?.type === 'minLength' &&  <span class="label-text-alt text-red-500">{errors.name.message}</span>}
+              </label>
+            </div>
+
+
 
           <div class="form-control w-full max-w-xs">
               <label class="label">
@@ -104,11 +132,11 @@ function Login() {
             {signInError}
             <input 
                 type='submit' 
-                value= 'login'
+                value= 'SignUp'
                 class="btn w-full max-w-xs text-white"
                         />
           </form>
-   <p className='text-center text-xs pt-1'>New to Doctors portal?<Link className='text-secondary' to='/signUp'> Create new account.</Link></p>
+   <p className='text-center text-xs pt-1'>Already have an account?<Link className='text-secondary' to='/login'> Please Login</Link></p>
 
 
         <div class="divider">OR</div>
@@ -125,7 +153,7 @@ function Login() {
   )
 }
 
-export default Login
+export default SignUp
 
 
 // import React from 'react';
