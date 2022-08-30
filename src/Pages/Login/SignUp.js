@@ -1,24 +1,24 @@
 import React from 'react';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Footer from '../Shared/Footer';
 import auth from '../../firebase.init';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useUpdateProfile } from 'react-firebase-hooks/auth';
 import Loading from '../Shared/Loading';
 
 function SignUp() {
   const [signInWihGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
   const { register, formState: { errors }, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
-
+  const [updateProfile, updating, updateError] = useUpdateProfile(auth);
   const [
     createUserWithEmailAndPassword,
     user,
     loading,
     error,
   ] = useCreateUserWithEmailAndPassword(auth);
+  const navigate = useNavigate();
 
   let signInError;
 
@@ -35,10 +35,16 @@ function SignUp() {
   if(googleUser){
     console.log(googleUser);
   }
+  if(user){
+    console.log(user);
+  }
   
-  const OnSubmit = data =>{
-    console.log(data);
-    createUserWithEmailAndPassword(data.name,data.email,data.password);
+  const onSubmit = async data =>{
+    await createUserWithEmailAndPassword(data.email,data.password);
+    await updateProfile({ displayName:data.name});
+    console.log('update successful');
+    navigate("/appointment")
+    //alert('You successfully created your account');
   }
   return (
 <>
@@ -47,7 +53,7 @@ function SignUp() {
         <div class="card-body">
           <h2 class="text-center text-2xl font-bold">Sign Up</h2>
 
-          <form onSubmit={handleSubmit(OnSubmit)}>
+          <form onSubmit={handleSubmit(onSubmit)}>
 
 
           <div class="form-control w-full max-w-xs">
@@ -132,7 +138,7 @@ function SignUp() {
             {signInError}
             <input 
                 type='submit' 
-                value= 'SignUp'
+                value= 'Signup'
                 class="btn w-full max-w-xs text-white"
                         />
           </form>

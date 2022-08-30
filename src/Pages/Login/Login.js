@@ -1,6 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import Footer from '../Shared/Footer';
 import auth from '../../firebase.init';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
@@ -20,6 +19,10 @@ function Login() {
     error,
   ] = useSignInWithEmailAndPassword(auth);
 
+  const navigate = useNavigate();
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
+
   let signInError;
 
   if(error || googleError){
@@ -32,8 +35,8 @@ function Login() {
   }
 
 
-  if(googleUser){
-    console.log(googleUser);
+  if(user || googleUser){
+    navigate(from, { replace:true });
   }
   
   const OnSubmit = data =>{

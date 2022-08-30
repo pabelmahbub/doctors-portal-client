@@ -14,7 +14,8 @@ function Service({ service, setTreatment }) {
           <div class="card-actions justify-center pt-5">
             {
               slots.length !== 0 ?
-                <label for="BookingModal" onClick={() => setTreatment(service)} class=" btn modal-button btn btn-secondary text-white uppercase">Book Appointment</label>
+                <label 
+                htmlFor="BookingModal" onClick={() => setTreatment(service)} class=" btn modal-button btn btn-secondary text-white uppercase">Book Appointment</label>
                 : <button disabled class="btn btn-primary">Book Appointment</button>
             }
             {/* anotehr way// <button disabled={slots.length === 0} class="btn btn-primary">Book Now</button> */}
