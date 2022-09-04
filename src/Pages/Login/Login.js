@@ -6,10 +6,13 @@ import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import Loading from '../Shared/Loading';
+import { useSendEmailVerification } from 'react-firebase-hooks/auth';
+
 
 function Login() {
   const [signInWihGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
   const { register, formState: { errors }, handleSubmit } = useForm();
+  const [sendEmailVerification, sending, verififyError] = useSendEmailVerification(auth);
   const onSubmit = (data) => console.log(data);
 
   const [
@@ -39,9 +42,12 @@ function Login() {
     navigate(from, { replace:true });
   }
   
-  const OnSubmit = data =>{
+  const OnSubmit = async data =>{
     console.log(data);
-    signInWithEmailAndPassword(data.email,data.password);
+    await sendEmailVerification();
+          alert('Sent email');
+    await signInWithEmailAndPassword(data.email,data.password);
+    
   }
   return (
 <>

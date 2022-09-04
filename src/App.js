@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import {Routes,Route} from "react-router-dom";
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Home from './Pages/Home/Home';
 import About from './Pages/About/About';
 import Navbar from './Pages/Shared/Navbar';
@@ -27,6 +29,8 @@ function App() {
         <Route path="/appointment" element={<Appointment />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
+
+      <ToastContainer></ToastContainer>
 
 
     </div>
