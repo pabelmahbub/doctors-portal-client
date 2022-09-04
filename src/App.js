@@ -11,6 +11,9 @@ import NotFound from './Pages/NotFound/NotFound';
 import Appointment from './Pages/Appointment/Appointment';
 import SignUp from './Pages/Login/SignUp';
 import RequiredAuth from './Pages/Login/RequiredAuth';
+import Dashboard from './Pages/Dashboard/Dashboard';
+import MyAppointments from './Pages/Dashboard/MyAppointments';
+import MyReview from './Pages/Dashboard/MyReview';
 
 function App() {
   return (
@@ -26,7 +29,17 @@ function App() {
           <RequiredAuth>
             <Appointment />
           </RequiredAuth>}/>
-        <Route path="/appointment" element={<Appointment />} />
+
+          <Route path="/dashboard" element={
+          <RequiredAuth>
+            <Dashboard />
+          </RequiredAuth>}>
+
+          <Route index element={<MyAppointments />} />
+          <Route path="review" element={<MyReview/>} />
+         
+          </Route>
+
         <Route path="/*" element={<NotFound />} />
       </Routes>
 
