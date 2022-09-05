@@ -12,6 +12,7 @@ Dental clinic app where patient and doctors both's life would be easier because 
 - react-day-picker
 - react-hook-form
 - react-router@v6
+- React Query
 - EmailJs
 - Tailwind
 - DaisyUI
