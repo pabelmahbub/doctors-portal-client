@@ -1,5 +1,5 @@
 #### live site :https://doctor-app-3.netlify.app/
-#### live site :日本語版: https://doctors-12.netlify.app/  [email:kk@gmail.com password:111111]
+#### live site :日本語版: https://doctors-13.netlify.app/  [email:kk@gmail.com password:111111]
 #### Server side code repo:https://github.com/pabelmahbub/doctors-portal-server/
 #### server side endpoint:https://doctors-100.herokuapp.com/
 ## Doctors Portal
