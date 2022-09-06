@@ -1,6 +1,7 @@
 #### live site :https://doctor-app-3.netlify.app/
-#### live site :日本語版: https://doctors-portal-11.netlify.app/
+#### live site :日本語版: https://doctors-12.netlify.app/  [email:kk@gmail.com password:111111]
 #### Server side code repo:https://github.com/pabelmahbub/doctors-portal-server/
+#### server side endpoint:https://doctors-100.herokuapp.com/
 ## Doctors Portal
 Dental clinic app where patient and doctors both's life would be easier because this app helps to book schedule and provide available time of consulting.
 
@@ -12,6 +13,7 @@ Dental clinic app where patient and doctors both's life would be easier because 
 - react-day-picker
 - react-hook-form
 - react-router@v6
+- React Query
 - EmailJs
 - Tailwind
 - DaisyUI
