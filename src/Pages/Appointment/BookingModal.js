@@ -25,7 +25,7 @@ function BookingModal({ date,treatment,setTreatment,refetch }) {
       patientName: user.displayName,
       phone: e.target.phone.value
     }
-    fetch("http://localhost:5000/booking",
+    fetch("https://doctors-100.herokuapp.com/booking",
       {
      method: "post",
      headers:{
