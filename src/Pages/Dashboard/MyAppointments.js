@@ -8,13 +8,14 @@ function MyAppointments() {
   const [appointments, setAppointments] = useState([]);
   useEffect(() => {
     if(user){
-      // fetch(`http://localhost:5000/booking?patient${user.email}`)
-      fetch(`http://localhost:5000/available`)
+      //allBooking
+      fetch(`http://localhost:5000/myBooking?patient=${user.email}`)
+      //fetch(`https://doctors-100.herokuapp.com/available`)
     .then(res=> res.json())
     .then(data => setAppointments(data));
     }
   }, [user])
-  
+
   return (
     <div>
       {/* <p>{appointments.length}</p> */}
@@ -29,21 +30,23 @@ function MyAppointments() {
         <th>Treatment Name</th>
         <th>Date</th>
         <th>Schedule</th>
+        <th>Contact No.</th>
       </tr>
     </thead>
     <tbody>
       {
-        appointments.map((appointment, index) => 
+        appointments.map((appointment, index) =>
         <tr>
           <th>{index + 1}</th>
-          <td>{appointment.name}</td>
-          <td>{appointment.slots[1]}</td>
-          <td>{appointment.name}</td>
-          <td>{appointment.name}</td>
+          <td>{appointment.patientName}</td>
+          <td>{appointment.treatment}</td>
+          <td>{appointment.date}</td>
+          <td>{appointment.slot}</td>
+          <td>{appointment.phone}</td>
         </tr>)
       }
-      
-      
+
+
 
     </tbody>
   </table>
