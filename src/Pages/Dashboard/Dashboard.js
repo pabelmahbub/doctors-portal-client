@@ -6,7 +6,7 @@ function Dashboard() {
                               <div class="drawer drawer-mobile">
                               <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
                               <div class="drawer-content">
-                               <h2 className='text-2xl font-bold text-primary'>My Dashboard</h2>
+                               <h2 className='text-2xl font-bold text-secondary text-center'>My Appointments</h2>
                                <Outlet></Outlet>
                                 {/* <label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">Open drawer</label> */}
                               

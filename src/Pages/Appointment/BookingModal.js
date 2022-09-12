@@ -72,8 +72,8 @@ function BookingModal({ date,treatment,setTreatment,refetch }) {
               }
             </select>
             <input type="text" name='name' disabled value={user?.displayName || ''} class="input input-bordered input-accent w-full max-w-xs" />
-            <input type="text" name='email' disabled value={user?.email || ''} class="input input-bordered input-accent w-full max-w-xs" />
-            <input type="text" name='phone' placeholder="Phone number" class="input input-bordered input-accent w-full max-w-xs" required />
+            <input type="email" name='email' disabled value={user?.email || ''} class="input input-bordered input-accent w-full max-w-xs" />
+            <input type="number" name='phone' placeholder="Phone number" class="input input-bordered input-accent w-full max-w-xs" required />
             <input type="submit" value='submit' class="btn btn-secondary w-full max-w-xs" />
 
           </form>

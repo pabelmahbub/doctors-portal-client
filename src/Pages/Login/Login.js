@@ -2,17 +2,19 @@ import React from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import Footer from '../Shared/Footer';
 import auth from '../../firebase.init';
-import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import Loading from '../Shared/Loading';
-import { useSendEmailVerification } from 'react-firebase-hooks/auth';
+
 
 
 function Login() {
-  const [signInWihGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
+  const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
+  const [signInWithGithub, githubUser, githubLoading, githubError] = useSignInWithGithub(auth);
   const { register, formState: { errors }, handleSubmit } = useForm();
-  const [sendEmailVerification, sending, verififyError] = useSendEmailVerification(auth);
+
+  
   const onSubmit = (data) => console.log(data);
 
   const [
@@ -28,23 +30,22 @@ function Login() {
 
   let signInError;
 
-  if(error || googleError){
+  if(error || googleError || githubError){
     signInError= <p className='text-red-500 pb-2'>{error?.message || googleError?.message}</p>
   }
   
   //alltime loading::::  if (true || loading || googleLoading) {
-  if (loading || googleLoading) {
+  if (loading || googleLoading || githubLoading) {
     return <Loading></Loading>
   }
 
 
-  if(user || googleUser){
+  if(user || googleUser || githubUser){
     navigate(from, { replace:true });
   }
   
   const OnSubmit = async data =>{
     console.log(data);
-    await sendEmailVerification();
           alert('Sent email');
     await signInWithEmailAndPassword(data.email,data.password);
     
@@ -120,11 +121,18 @@ function Login() {
    <p className='text-center text-xs pt-1'>New to Doctors portal?<Link className='text-secondary' to='/signUp'> Create new account.</Link></p>
 
 
-        <div class="divider">OR</div>
+  <div class="divider">OR</div>
     <button 
-    onClick={() => signInWihGoogle()}
+    onClick={() => signInWithGoogle()}
     class="btn btn-outline">Continue with Google</button>
+
+    <button 
+    onClick={() => signInWithGithub()}
+    className="btn btn-outline btn-secondary">Continue with Github</button>
   </div>
+
+ 
+  
 </div>
 
 
@@ -134,7 +142,7 @@ function Login() {
   )
 }
 
-export default Login
+export default Login;
 
 
 // import React from 'react';

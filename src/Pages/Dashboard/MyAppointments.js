@@ -10,7 +10,7 @@ function MyAppointments() {
     if(user){
       //allBooking
       fetch(`http://localhost:5000/myBooking?patient=${user.email}`)
-      //fetch(`https://doctors-100.herokuapp.com/available`)
+      //fetch(`https://doctors-100.herokuapp.com/myBooking?patient=${user.email}`)
     .then(res=> res.json())
     .then(data => setAppointments(data));
     }
@@ -21,7 +21,7 @@ function MyAppointments() {
       {/* <p>{appointments.length}</p> */}
 
       <div className="overflow-x-auto">
-  <table className="table table-zebra w-full mt-4">
+  <table className="table table-zebra w-full mt-4 mb-4 mx-4">
     {/* <!-- head --> */}
     <thead>
       <tr>
