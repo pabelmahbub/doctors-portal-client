@@ -28,7 +28,7 @@ function SignUp() {
   if(error || googleError || updateError || githubError){
     signInError= <p className='text-red-500 pb-2'>{error?.message || googleError?.message}</p>
   }
-  
+
   //alltime loading::::  if (true || loading || googleLoading) {
   if (loading || googleLoading || githubLoading) {
     return <Loading></Loading>
@@ -44,7 +44,10 @@ function SignUp() {
   // if(user){
   //   console.log(user);
   // }
-  
+  if(token){
+    navigate('/appointment');
+  }
+
   const onSubmit = async data =>{
     await createUserWithEmailAndPassword(data.email,data.password);
     await updateProfile({ displayName:data.name});
@@ -66,9 +69,9 @@ function SignUp() {
               <label class="label">
                 <span class="label-text">Name</span>
               </label>
-              <input 
-              type="text" 
-              placeholder="Pls type name here" 
+              <input
+              type="text"
+              placeholder="Pls type name here"
               class="input input-bordered w-full max-w-xs"
               {...register("name", {
                         required:{
@@ -93,9 +96,9 @@ function SignUp() {
               <label class="label">
                 <span class="label-text">Email</span>
               </label>
-              <input 
-              type="email" 
-              placeholder="Your email address" 
+              <input
+              type="email"
+              placeholder="Your email address"
               class="input input-bordered w-full max-w-xs"
               {...register("email", {
                         required:{
@@ -119,9 +122,9 @@ function SignUp() {
               <label class="label">
                 <span class="label-text">Password</span>
               </label>
-              <input 
-              type="password" 
-              placeholder="Passeword here" 
+              <input
+              type="password"
+              placeholder="Passeword here"
               class="input input-bordered w-full max-w-xs"
               {...register("password", {
                         required:{
@@ -142,8 +145,8 @@ function SignUp() {
 
 
             {signInError}
-            <input 
-                type='submit' 
+            <input
+                type='submit'
                 value= 'Signup'
                 class="btn w-full max-w-xs text-white"
                         />
@@ -152,10 +155,10 @@ function SignUp() {
 
 
         <div class="divider">OR</div>
-    <button 
+    <button
     onClick={() => signInWihGoogle()}
     class="btn btn-outline">Continue with Google</button>
-     <button 
+     <button
     onClick={() => signInWithGithub()}
     className="btn btn-outline btn-secondary">Continue with Github</button>
   </div>
@@ -169,5 +172,3 @@ function SignUp() {
 }
 
 export default SignUp;
-
-

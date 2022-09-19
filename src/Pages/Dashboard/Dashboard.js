@@ -9,18 +9,19 @@ function Dashboard() {
                                <h2 className='text-2xl font-bold text-secondary text-center'>My Appointments</h2>
                                <Outlet></Outlet>
                                 {/* <label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">Open drawer</label> */}
-                              
-                              </div> 
+
+                              </div>
                               <div class="drawer-side">
-                                <label for="my-drawer-2" class="drawer-overlay"></label> 
+                                <label for="my-drawer-2" class="drawer-overlay"></label>
                                 <ul class="menu p-4 overflow-y-auto w-60 bg-base-100 text-base-content">
                                   {/* <!-- Sidebar content here --> */}
                                   <li><Link to='/dashboard'>MY APPOINMENTS</Link></li>
                                   <li><Link to='/dashboard/review'>REVIEW</Link></li>
                                   <li><Link to='/dashboard/myHistory'>MY HISTORY</Link></li>
-                                 
+                                  <li><Link to='/dashboard/users'>All Users</Link></li>
+
                                 </ul>
-                              
+
                               </div>
                             </div>
   )

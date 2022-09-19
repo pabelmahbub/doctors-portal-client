@@ -1,11 +1,11 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import Footer from '../Shared/Footer';
 import auth from '../../firebase.init';
-import { useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword,useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import Loading from '../Shared/Loading';
+import useToken from '../../hooks/useToken';
 
 
 
@@ -13,16 +13,9 @@ function Login() {
   const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
   const [signInWithGithub, githubUser, githubLoading, githubError] = useSignInWithGithub(auth);
   const { register, formState: { errors }, handleSubmit } = useForm();
-
-  
   const onSubmit = (data) => console.log(data);
-
-  const [
-    signInWithEmailAndPassword,
-    user,
-    loading,
-    error,
-  ] = useSignInWithEmailAndPassword(auth);
+  const [signInWithEmailAndPassword,user,loading,error] = useSignInWithEmailAndPassword(auth);
+  const [token] = useToken(user || googleUser || githubUser);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -30,25 +23,27 @@ function Login() {
 
   let signInError;
 
-  if(error || googleError || githubError){
-    signInError= <p className='text-red-500 pb-2'>{error?.message || googleError?.message}</p>
-  }
-  
-  //alltime loading::::  if (true || loading || googleLoading) {
-  if (loading || googleLoading || githubLoading) {
-    return <Loading></Loading>
-  }
-
-
-  if(user || googleUser || githubUser){
+useEffect( () =>{
+  if(token){
     navigate(from, { replace:true });
   }
-  
+
+},[token, from, navigate])
+
+//alltime loading::::  if (true || loading || googleLoading) {
+if (loading || googleLoading || githubLoading) {
+  return <Loading></Loading>
+}
+
+if(error || googleError || githubError){
+  signInError= <p className='text-red-500 pb-2'>{error?.message || googleError?.message}</p>
+}
+
   const OnSubmit = async data =>{
     console.log(data);
           alert('Sent email');
     await signInWithEmailAndPassword(data.email,data.password);
-    
+
   }
   return (
 <>
@@ -63,9 +58,9 @@ function Login() {
               <label class="label">
                 <span class="label-text">Email</span>
               </label>
-              <input 
-              type="email" 
-              placeholder="Your email address" 
+              <input
+              type="email"
+              placeholder="Your email address"
               class="input input-bordered w-full max-w-xs"
               {...register("email", {
                         required:{
@@ -89,9 +84,9 @@ function Login() {
               <label class="label">
                 <span class="label-text">Password</span>
               </label>
-              <input 
-              type="password" 
-              placeholder="Passeword here" 
+              <input
+              type="password"
+              placeholder="Passeword here"
               class="input input-bordered w-full max-w-xs"
               {...register("password", {
                         required:{
@@ -112,8 +107,8 @@ function Login() {
 
 
             {signInError}
-            <input 
-                type='submit' 
+            <input
+                type='submit'
                 value= 'login'
                 class="btn w-full max-w-xs text-white"
                         />
@@ -122,17 +117,17 @@ function Login() {
 
 
   <div class="divider">OR</div>
-    <button 
+    <button
     onClick={() => signInWithGoogle()}
     class="btn btn-outline">Continue with Google</button>
 
-    <button 
+    <button
     onClick={() => signInWithGithub()}
     className="btn btn-outline btn-secondary">Continue with Github</button>
   </div>
 
- 
-  
+
+
 </div>
 
 
@@ -157,7 +152,7 @@ export default Login;
 //   const [signInWihGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
 //   const [signInWithEmailAndPassword,user,loading,error] = useSignInWithEmailAndPassword(auth);
 //   const { register, handleSubmit, watch, formState: { errors } } = useForm();
- 
+
 
 //   const [email, setEmail] = useState('');
 //   const [password, setPassword] = useState('');
@@ -167,7 +162,7 @@ export default Login;
 //     console.log(data);
 //     signInWithEmailAndPassword(data.email,data.password);
 //   }
-  
+
 //   return (
 // <>
 //     <div className='flex h-screen justify-center items-center'>
@@ -181,9 +176,9 @@ export default Login;
 //   <label class="label">
 //     <span class="label-text">Email</span>
 //   </label>
-//   <input 
-//       type="email" 
-//       placeholder="Your email address" 
+//   <input
+//       type="email"
+//       placeholder="Your email address"
 //       class="input input-bordered w-full max-w-xs"
 //       {...register("email", {
 //         required:{
@@ -206,9 +201,9 @@ export default Login;
 //   <label class="label">
 //     <span class="label-text">Password</span>
 //   </label>
-//   <input 
-//       type="password" 
-//       placeholder="Type password here" 
+//   <input
+//       type="password"
+//       placeholder="Type password here"
 //       class="input input-bordered w-full max-w-xs"
 //       {...register("password", {
 //         required:{
@@ -233,10 +228,10 @@ export default Login;
 //   <label class="label">
 //     <span class="label-text">Password</span>
 //   </label>
-//   <input 
+//   <input
 //       onChange={(e) => setPassword(e.target.value)}
-//       type="password" 
-//       placeholder="Please type your password" 
+//       type="password"
+//       placeholder="Please type your password"
 //       class="input input-bordered w-full max-w-xs"
 //       {...register("password", {
 //         required:{
@@ -258,26 +253,26 @@ export default Login;
 
 
 
-      
-     
-//       {/* <button 
-//           type='submit' 
+
+
+//       {/* <button
+//           type='submit'
 //           class="btn w-full max-w-xs text-white"
 //           onClick={() => signInWithEmailAndPassword(email, password)}>Login</button> */}
 
-//      <input 
-//           type='submit' 
+//      <input
+//           type='submit'
 //           value= 'login'
 //           class="btn w-full max-w-xs text-white"
 //           onClick={() => signInWithEmailAndPassword(email, password)} />
 //     </form>
 
 
-   
+
 
 
 //     <div class="divider">OR</div>
-//     <button 
+//     <button
 //     onClick={() => signInWihGoogle()}
 //     class="btn btn-outline">Continue with Google</button>
 //   </div>

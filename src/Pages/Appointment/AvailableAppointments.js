@@ -14,7 +14,7 @@ function AvailableAppointments({ date}) {
   const formattedDate = format(date, 'PP');
   const { isLoading, data:services, refetch ,staleTime=(10)} = useQuery(['available', formattedDate], () =>
   fetch(`https://doctors-100.herokuapp.com/available?date=${formattedDate}`)
-  
+
     .then(res =>
     res.json()
   ),
