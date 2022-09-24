@@ -37,6 +37,7 @@ function BookingModal({ date,treatment,setTreatment,refetch }) {
        .then(data => {
         console.log(data);
         if(data.success){
+          refetch();
           toast.success(`Appointment is set! ${formattedDate} at ${slot}`)
         }else{
           toast.error(`Already have an appintment on ${data.booking?.date} at ${data.booking?.slot}`)
@@ -45,7 +46,7 @@ function BookingModal({ date,treatment,setTreatment,refetch }) {
     refetch();
     setTreatment(null);
 
-  
+
 
 
   }
@@ -66,7 +67,7 @@ function BookingModal({ date,treatment,setTreatment,refetch }) {
             <input type='text' value={format(date, 'PP')} disabled class="input input-bordered input-accent w-full max-w-xs" />
             <select name='slot' class="select select-bordered w-full max-w-xs">
               {
-                slots.map((slot,index) => <option 
+                slots.map((slot,index) => <option
                   key={index}
                   value={slot}>{slot}</option>)
               }

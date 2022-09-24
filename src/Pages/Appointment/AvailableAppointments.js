@@ -40,6 +40,7 @@ if(isLoading){
           services?.map(service => <Service
             key={service._id}
             service={service}
+            refetch={refetch}
             setTreatment={setTreatment}></Service>)
         }
 

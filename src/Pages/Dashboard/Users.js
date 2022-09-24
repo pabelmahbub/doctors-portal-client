@@ -6,8 +6,13 @@ import UserRow from './UserRow';
 
 function Users() {
   const [treatment, setTreatment] = useState(null);
-  const { isLoading, data:users} = useQuery('available', () =>
-  fetch(`http://localhost:5000/user`)
+  const { isLoading, data:users, refetch} = useQuery('available', () =>
+  fetch(`http://localhost:5000/user`,{
+    method:'GET',
+    headers:{
+      authorization: `Bearer ${localStorage.getItem('accessToken')}`
+    }
+  })
 
     .then(res =>
     res.json()
@@ -28,7 +33,7 @@ if(isLoading){
     <tr>
       <th>ID</th>
       <th>Email</th>
-      <th>ID</th>
+      <th>JJJ</th>
       <th>Email</th>
     </tr>
   </thead>
@@ -37,6 +42,7 @@ if(isLoading){
     users.map(user=><UserRow
       key={user._id}
       user={user}
+      refetch={refetch}
       ></UserRow>)
   }
 

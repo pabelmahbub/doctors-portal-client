@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Service({ service, setTreatment }) {
+function Service({ service, setTreatment,refetch }) {
   const { name, slots } = service;
   return (
     <div>
