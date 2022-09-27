@@ -5,17 +5,23 @@ function UserRow({user,refetch}) {
   const {email,role} = user;
 
   const makeAdmin = () =>{
-    fetch(`http://localhost:5000/user/admin/${email}`,{
+    fetch(`https://doctors-100.herokuapp.com/user/admin/${email}`,{
       method: 'PUT',
       headers:{
         authorization:`Bearer ${localStorage.getItem('accessToken')}`
       }
     })
-    .then(res =>res.json())
-    .then(data =>{
-      console.log(data);
-      refetch();
-      toast.success(`Appointment is set!`);
+    .then(res =>{
+      if(res.status === 403){
+        toast.error('Failed to make an admin')
+      }
+      return res.json()})
+    .then(data => {
+      if(data.modifiedCount){
+        console.log(data);
+        refetch();
+        toast.success(`Made an admin`);
+      }
     })
   }
   return (
