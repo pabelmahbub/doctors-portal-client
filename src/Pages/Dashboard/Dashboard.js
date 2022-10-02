@@ -23,7 +23,11 @@ function Dashboard() {
                                   <li><Link to='/dashboard'>MY APPOINMENTS</Link></li>
                                   <li><Link to='/dashboard/review'>REVIEW</Link></li>
                                   <li><Link to='/dashboard/myHistory'>MY HISTORY</Link></li>
-                                  {admin && <li><Link to='/dashboard/users'>All Users</Link></li>}
+                                  {admin && 
+                                  <>
+                                  <li><Link to='/dashboard/users'>All Users</Link></li>
+                                  <li><Link to='/dashboard/addDoctor'>Add a doctor</Link></li>
+                                  </>}
 
                                 </ul>
 
