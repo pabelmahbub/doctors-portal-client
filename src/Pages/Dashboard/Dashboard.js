@@ -27,6 +27,7 @@ function Dashboard() {
                                   <>
                                   <li><Link to='/dashboard/users'>All Users</Link></li>
                                   <li><Link to='/dashboard/addDoctor'>Add a doctor</Link></li>
+                                  <li><Link to='/dashboard/manageDoctor'>Manage doctors</Link></li>
                                   </>}
 
                                 </ul>
