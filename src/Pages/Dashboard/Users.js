@@ -7,7 +7,7 @@ import UserRow from './UserRow';
 function Users() {
   const [treatment, setTreatment] = useState(null);
   const { isLoading, data:users, refetch} = useQuery('available', () =>
-  fetch(`https://doctors-100.herokuapp.com/user`,{
+  fetch(`http://localhost:5000/user`,{
     method:'GET',
     headers:{
       authorization: `Bearer ${localStorage.getItem('accessToken')}`

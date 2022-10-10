@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
-import {useNavigate} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import {signOut } from 'firebase/auth';
 
 function MyAppointments() {
@@ -13,13 +13,13 @@ function MyAppointments() {
   useEffect(() => {
     if(user){
       //allBooking
-      fetch(`https://doctors-100.herokuapp.com/myBooking?patient=${user.email}`,{
+      fetch(`http://localhost:5000/myBooking?patient=${user.email}`,{
         method:'GET',
         headers: {
           'authorization':`Bearer ${localStorage.getItem('accessToken')}`
   }
 })
-      //fetch(`https://doctors-100.herokuapp.com/myBooking?patient=${user.email}`)
+      //fetch(`http://localhost:5000/myBooking?patient=${user.email}`)
     .then(res=>{
       console.log('res', res);
       if(res.status === 401 || res.status === 403){
@@ -50,6 +50,7 @@ function MyAppointments() {
         <th>Date</th>
         <th>Schedule</th>
         <th>Contact No.</th>
+        <th>Payment</th>
       </tr>
     </thead>
     <tbody>
@@ -62,6 +63,10 @@ function MyAppointments() {
           <td>{appointment.date}</td>
           <td>{appointment.slot}</td>
           <td>{appointment.phone}</td>
+          <td>
+            {(appointment.price && !appointment.paid)&& <Link to={`/dashboard/payment/${appointment._id}`}><button className='btn btn-sm btn-warning'>Pay</button></Link>}
+            {(appointment.price && appointment.paid)&& <span className='text-accent'>Paid</span>}
+            </td>
         </tr>)
       }
 

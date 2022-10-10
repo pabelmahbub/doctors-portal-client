@@ -8,7 +8,7 @@ import {toast } from 'react-toastify';
 function BookingModal({ date,treatment,setTreatment,refetch }) {
   //from react-firebase-hook library
   const [user, loading, error] = useAuthState(auth);
-  const { _id, name, slots } = treatment;
+  const { _id, name, slots, price } = treatment;
   const formattedDate = format(date, 'PP');
 
   const handleBooking = e => {
@@ -21,11 +21,12 @@ function BookingModal({ date,treatment,setTreatment,refetch }) {
       treatment: name,
       date: formattedDate,
       slot,
+      price,
       patient: user.email,
       patientName: user.displayName,
       phone: e.target.phone.value
     }
-    fetch("https://doctors-100.herokuapp.com/booking",
+    fetch("http://localhost:5000/booking",
       {
      method: "post",
      headers:{
