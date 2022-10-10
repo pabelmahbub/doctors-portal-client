@@ -13,13 +13,13 @@ function MyAppointments() {
   useEffect(() => {
     if(user){
       //allBooking
-      fetch(`http://localhost:5000/myBooking?patient=${user.email}`,{
+      fetch(`https://doctors-100.herokuapp.com/myBooking?patient=${user.email}`,{
         method:'GET',
         headers: {
           'authorization':`Bearer ${localStorage.getItem('accessToken')}`
   }
 })
-      //fetch(`http://localhost:5000/myBooking?patient=${user.email}`)
+      //fetch(`https://doctors-100.herokuapp.com/myBooking?patient=${user.email}`)
     .then(res=>{
       console.log('res', res);
       if(res.status === 401 || res.status === 403){
