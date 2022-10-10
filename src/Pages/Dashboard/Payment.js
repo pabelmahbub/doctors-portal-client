@@ -12,7 +12,7 @@ function Payment() {
         const{id}= useParams();
         const url = `http://localhost:5000/booking/${id}`;
 
-        const{data:appoinment, isLoading}= useQuery('booking', ()=> fetch(url,{
+        const{data:appointment, isLoading}= useQuery('booking', ()=> fetch(url,{
                               method:'GET',
                               headers:{
                                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -25,15 +25,15 @@ function Payment() {
         }
   return (
     <div>
-<p>{appoinment.price}</p>
+<p>{appointment.price}</p>
 
 <div className="card w-96 bg-base-100 shadow-xl my-5 mx-5">
   <div className="card-body">
-    <h1 className="card-title text-success">Hello, {appoinment.patientName}</h1>
-    <h2 className="card-title">Please Pay for {appoinment.treatment}</h2>
-    <h3 className="card-title">Payment subtotal is: ¥{appoinment.price}</h3>
-    <p>Your appoinemt is in <span className='text-success'>{appoinment.date}</span> at <span className='text-success'>{appoinment.slot}</span></p>
-   
+    <h1 className="card-title text-success">Hello, {appointment.patientName}</h1>
+    <h2 className="card-title">Please Pay for {appointment.treatment}</h2>
+    <h3 className="card-title">Payment subtotal is: ¥{appointment.price}</h3>
+    <p>Your appointemt is in <span className='text-success'>{appointment.date}</span> at <span className='text-success'>{appointment.slot}</span></p>
+
   </div>
 </div>
 
@@ -42,7 +42,7 @@ function Payment() {
 <div className="card w-96 bg-base-100 shadow-xl mb-3 mx-5">
   <div className="card-body">
   <Elements stripe={stripePromise}>
-    <CheckoutForm />
+    <CheckoutForm appointment={appointment}/>
   </Elements>
   </div>
 </div>
@@ -60,7 +60,7 @@ export default Payment
 3.create a Elements wrapper using publishable key.
 4. Create checkout form using card element from stripe github docs.[https://github.com/stripe/react-stripe-js]
 5.Get card elements,functionality in code.
-6.Use stripe test cards in google 
+6.Use stripe test cards in google
 7.display error in UI
 ----
 8.in backend [get client secret from backend via payment intent post api]
