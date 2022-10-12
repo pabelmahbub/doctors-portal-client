@@ -1,5 +1,5 @@
-#### live site :https://doctor-app-3.netlify.app/
-#### live site :日本語版: https://dental-clinic-1.netlify.app/  [email:kk@gmail.com password:111111]
+#### live site :https://doctor-app-dental.netlify.app/
+#### live site :日本語版:https://doctor-app-dental.netlify.app/  [email:uu@gmail.com password:111111]
 #### Server side code repo:https://github.com/pabelmahbub/doctors-portal-server/
 #### server side endpoint:http://localhost:5000/
 ## Doctors Portal
