@@ -10,7 +10,7 @@ const stripePromise = loadStripe('pk_test_51IEOIEE7axL2bab7XPhMMh9Ukg5HW3vvzcxI7
 
 function Payment() {
         const{id}= useParams();
-        const url = `https://doctors-100.herokuapp.com/booking/${id}`;
+        const url = `http://localhost:5000/booking/${id}`;
 
         const{data:appointment, isLoading}= useQuery('booking', ()=> fetch(url,{
                               method:'GET',
@@ -30,10 +30,10 @@ function Payment() {
 <div className="card w-96 bg-base-100 shadow-xl my-5 mx-5">
   <div className="card-body">
     <h1 className="card-title text-success">Hello, {appointment.patientName}</h1>
-    <h2 className="card-title">Please Pay for {appointment.treatment}</h2>
-    <h3 className="card-title">Payment subtotal is: ¥{appointment.price}</h3>
+   
+    <h4 className="card-title">Treatment section: {appointment.treatment}</h4>
     <p>Your appointemt is in <span className='text-success'>{appointment.date}</span> at <span className='text-success'>{appointment.slot}</span></p>
-
+    <h3 className="card-title">Payment subtotal is: ¥{appointment.price}</h3>
   </div>
 </div>
 

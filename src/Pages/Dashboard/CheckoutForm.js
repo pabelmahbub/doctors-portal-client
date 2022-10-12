@@ -9,8 +9,9 @@ import {
 } from '@stripe/react-stripe-js';
 
 const CheckoutForm = ({appointment}) => {
-                  const {price} = appointment;
+                  const {price, patient, patientName} = appointment;
                   const [cardError, setCardError] = useState('');
+                  const [success, setSuccess] = useState('');
                   const [clientSecret, setClientSecret] = useState('');
 
                  const stripe = useStripe();
@@ -29,14 +30,37 @@ const CheckoutForm = ({appointment}) => {
 
                         if(error){
                               setCardError(error?.message);
+                              setSuccess('');
                         }
                         else{
                               setCardError('');
                         }
+                        //confirm card payment:
+                        const {paymentIntent, error: intentError} = await stripe.confirmCardPayment(
+                          clientSecret,
+                          {
+                            payment_method: {
+                              card:CardElement,
+                              billing_details:{
+                                name:patientName,
+                                email: patient
+                              }
+                            },
+                          }
+                        );
+                        if (intentError) {
+                          setCardError(intentError?.message);
+                          success('');
+                        }
+                        else{
+                          setCardError('');
+                          console.log(paymentIntent);
+                          setSuccess('Your payment is completed!');
+                        }
                    };
 
     useEffect( ()=>{
-       fetch('https://doctors-100.herokuapp.com/create-payment-intent',{
+       fetch('http://localhost:5000/create-payment-intent',{
          method:'POST',
          headers:{
            'content-type':'application/json',
@@ -64,6 +88,9 @@ const CheckoutForm = ({appointment}) => {
                                 </form>
                                 {
                                     cardError && <p className='text-red-600'>{cardError}</p>
+                                }
+                                {
+                                    success && <p className='text-green-600'>{success}</p>
                                 }
                                 </>
                               );
