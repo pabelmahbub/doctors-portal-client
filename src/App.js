@@ -20,6 +20,7 @@ import RequireAdmin from './Pages/Login/RequireAdmin';
 import AddDoctor from './Pages/Dashboard/AddDoctor';
 import ManageDoctors from './Pages/Dashboard/ManageDoctors';
 import WebCam from './Pages/Dashboard/WebCam';
+import Payment from './Pages/Dashboard/Payment';
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
           <Route path="review" element={<MyReview/>} />
           <Route path="myHistory" element={<MyHistory />} />
           <Route path="webCam" element={<WebCam/>} />
+          <Route path="payment/:id" element={<Payment />} />
           <Route path="users" element={<RequireAdmin><Users></Users></RequireAdmin>} />
           <Route path="addDoctor" element={<RequireAdmin><AddDoctor></AddDoctor></RequireAdmin>} />
           <Route path="manageDoctor" element={<RequireAdmin><ManageDoctors></ManageDoctors></RequireAdmin>} />

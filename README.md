@@ -1,7 +1,7 @@
-#### live site :https://doctor-app-3.netlify.app/
-#### live site :日本語版: https://dental-clinic-1.netlify.app/  [email:kk@gmail.com password:111111]
+#### live site :https://doctor-app-dental.netlify.app/
+#### live site :日本語版:https://my-dental-clinic.netlify.app/  [email:uu@gmail.com password:111111]
 #### Server side code repo:https://github.com/pabelmahbub/doctors-portal-server/
-#### server side endpoint:https://doctors-100.herokuapp.com/
+#### server side endpoint:http://localhost:5000/
 ## Doctors Portal
 Dental clinic app where patient and doctors both's life would be easier because this app helps to book schedule and provide available time of consulting.
 

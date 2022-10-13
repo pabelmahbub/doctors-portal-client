@@ -1,7 +1,7 @@
 import React from 'react'
 
-function Service({ service, setTreatment,refetch }) {
-  const { name, slots } = service;
+function Service({ service, setTreatment}) {
+  const { name, slots, price } = service;
   return (
     <div>
       <div class="card lg:max-w-lg bg-base-100 shadow-xl">
@@ -10,6 +10,7 @@ function Service({ service, setTreatment,refetch }) {
           <p>{
             slots.length ? <span>{slots[0]} slot available now</span> : <span className='text-orange-500 font-bold'>Pls try another day!</span>
           }</p>
+          <p>Service Fee is :¥{price} now!</p>
           <p>{slots.length} {slots.length > 1 ? 'slots' : 'slot'} are avilable now!</p>
           <div class="card-actions justify-center pt-5">
             {
