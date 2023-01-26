@@ -5,7 +5,7 @@ function UserRow({user,refetch}) {
   const {email,role} = user;
 
   const makeAdmin = () =>{
-    fetch(`http://localhost:5000/user/admin/${email}`,{
+    fetch(`https://doctors-portal-server1.up.railway.app/user/admin/${email}`,{
       method: 'PUT',
       headers:{
         authorization:`Bearer ${localStorage.getItem('accessToken')}`

@@ -60,7 +60,7 @@ const CheckoutForm = ({appointment}) => {
                    };
 
     useEffect( ()=>{
-       fetch('http://localhost:5000/create-payment-intent',{
+       fetch('https://doctors-portal-server1.up.railway.app/create-payment-intent',{
          method:'POST',
          headers:{
            'content-type':'application/json',

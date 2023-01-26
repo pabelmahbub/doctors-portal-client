@@ -7,7 +7,7 @@ import {toast } from 'react-toastify';
 
 function AddDoctor() {
   const { register, formState: { errors }, handleSubmit,reset } = useForm();
-  const {data: services, isLoading} = useQuery('services', () => fetch('http://localhost:5000/service').then(res=> res.json()));
+  const {data: services, isLoading} = useQuery('services', () => fetch('https://doctors-portal-server1.up.railway.app/service').then(res=> res.json()));
 
 const imageStorageKey ='e14e1b8d3c8184fd3276c41e2f3ab393';
 
@@ -34,7 +34,7 @@ const imageStorageKey ='e14e1b8d3c8184fd3276c41e2f3ab393';
              } 
              //send data to my db:
 
-             fetch('http://localhost:5000/doctor', {
+             fetch('https://doctors-portal-server1.up.railway.app/doctor', {
                               method: "POST",
                               headers: {
                                     "content-type":'application/json',

@@ -19,17 +19,17 @@ function Banner() {
            
             {/* <CountUp delay={4} end={880} /> */}
             <span className='text-3xl font-bold text-secondary'><CountUp
-  start={0}
-  end={16052}
-  duration={4.75}
-  separator=","
-  decimal=","
-  prefix="満足した患者数:"
-  suffix="人"
-  onEnd={() => console.log('Ended! 👏')}
-  onStart={() => console.log('Started! 💨')}
-></CountUp></span>
-</div>
+                start={0}
+                end={1652}
+                duration={2.75}
+                separator=","
+                decimal=","
+                prefix="満足した患者数:"
+                suffix="人"
+                onEnd={() => console.log('Ended! 👏')}
+                onStart={() => console.log('Started! 💨')}
+              ></CountUp></span>
+              </div>
             <Primarybutton>Get Started</Primarybutton>
           </div>
         </div>

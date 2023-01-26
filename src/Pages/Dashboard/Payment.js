@@ -10,7 +10,7 @@ const stripePromise = loadStripe('pk_test_51IEOIEE7axL2bab7XPhMMh9Ukg5HW3vvzcxI7
 
 function Payment() {
         const{id}= useParams();
-        const url = `http://localhost:5000/booking/${id}`;
+        const url = `https://doctors-portal-server1.up.railway.app/booking/${id}`;
 
         const{data:appointment, isLoading}= useQuery('booking', ()=> fetch(url,{
                               method:'GET',

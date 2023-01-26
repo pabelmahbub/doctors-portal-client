@@ -7,7 +7,7 @@ import DoctorRow from './DoctorRow';
 function ManageDoctors() {
   const[deletingDoctor, setDeletingDoctor] = useState(null);
 
-        const {data:doctors, isLoading, refetch} = useQuery('doctors', ()=> fetch('http://localhost:5000/doctor',{
+        const {data:doctors, isLoading, refetch} = useQuery('doctors', ()=> fetch('https://doctors-portal-server1.up.railway.app/doctor',{
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
                       },
