@@ -8,7 +8,7 @@ function useToken(user) {
                               const email = user?.user?.email;
                               const currentUser = {email: email};
                               if(email){
-                               fetch(`http://localhost:5000/user/${email}`, {
+                               fetch(`https://doctors-portal-server1.up.railway.app/user/${email}`, {
                                   method: "PUT",
                                   headers:{
                                           'content-type': 'application/json',

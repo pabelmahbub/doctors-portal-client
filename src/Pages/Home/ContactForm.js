@@ -1,7 +1,7 @@
 import appointment from '../../assets/images/appointment.png';
 import { useState } from 'react';
 import Primarybutton from '../Shared/Primarybutton';
-import emailjs from '@emailjs/browser';
+//import emailjs from '@emailjs/browser';
 import React, { useRef } from 'react';
 
 function ContactForm() {
@@ -11,14 +11,14 @@ function ContactForm() {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_32jpqla', 'template_vbv53cy', form.current, 'v8XFNnTGp8JZaNL_F')
-      .then((result) => {
-        console.log(result.text);
-        alert('Message sending successfully!');
-        form = "";
-      }, (error) => {
-        console.log(error.text);
-      });
+  //   emailjs.sendForm('service_32jpqla', 'template_vbv53cy', form.current, 'v8XFNnTGp8JZaNL_F')
+  //     .then((result) => {
+  //       console.log(result.text);
+  //       alert('Message sending successfully!');
+  //       form = "";
+  //     }, (error) => {
+  //       console.log(error.text);
+  //     });
 
   };
 

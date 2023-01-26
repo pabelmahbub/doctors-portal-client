@@ -13,7 +13,7 @@ function Login() {
   const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
   const [signInWithGithub, githubUser, githubLoading, githubError] = useSignInWithGithub(auth);
   const { register, formState: { errors }, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
+  //const onSubmit = (data) => console.log(data);
   const [signInWithEmailAndPassword,user,loading,error] = useSignInWithEmailAndPassword(auth);
   const [token] = useToken(user || googleUser || githubUser);
 
@@ -41,7 +41,7 @@ if(error || googleError || githubError){
 
   const OnSubmit = async data =>{
     console.log(data);
-          alert('Sent email');
+          //alert('Sent email');
     await signInWithEmailAndPassword(data.email,data.password);
 
   }

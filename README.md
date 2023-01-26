@@ -1,6 +1,6 @@
 
 #### Server side code repo:https://github.com/pabelmahbub/doctors-portal-server/
-
+#### server side endpoint:https://doctors-portal-server1.up.railway.app/
 ## Doctors Portal
 Dental clinic app where patient and doctors both's life would be easier because this app helps to book schedule and provide available time of consulting.
 

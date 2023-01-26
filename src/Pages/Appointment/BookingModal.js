@@ -26,7 +26,7 @@ function BookingModal({ date,treatment,setTreatment,refetch }) {
       patientName: user.displayName,
       phone: e.target.phone.value
     }
-    fetch("http://localhost:5000/booking",
+    fetch("https://doctors-portal-server1.up.railway.app/booking", 
       {
      method: "post",
      headers:{
