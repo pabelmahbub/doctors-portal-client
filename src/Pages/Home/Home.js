@@ -7,6 +7,7 @@ import Services from './Services';
 import Testimonials from './Testimonials';
 import Footer from '../Shared/Footer';
 import ContactForm from './ContactForm';
+import Chat from './Chat';
 
 function Home() {
   return (
@@ -17,6 +18,9 @@ function Home() {
         <Services></Services>
         <OneService></OneService>
 
+      </div>
+      <div>
+        <Chat />
       </div>
       <HomeAppointment></HomeAppointment>
       <Testimonials></Testimonials>
