@@ -59,6 +59,7 @@ Update the app.json file according to the new configuration.
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
+    "@kommunicate/kommunicate-chatbot-plugin": "^0.0.5",
     "daisyui": "^2.24.0",
     "date-fns": "^2.29.2",
     "react": "^18.2.0",
