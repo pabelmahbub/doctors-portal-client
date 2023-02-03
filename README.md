@@ -20,6 +20,8 @@
 - Express.js
 - MongoDB
 - Railway
+- kommunicate.io
+- talk.js
 
 
 #### Dependencies
